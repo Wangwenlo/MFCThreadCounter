@@ -43,12 +43,13 @@ BOOL Worker::StartThread()
 
 BOOL Worker::StopThread()
 {
+	m_bPause = FALSE;
 	if (!m_bRunning)
 		return FALSE; // 线程未运行
-
+	DWORD dwWaitResult = WaitForSingleObject(m_hThread, 2000);
 	// 设置停止标志
 	m_bStop = TRUE;
-
+	
 	// 等待线程结束（最多等待2秒）
 	if (m_hThread)
 	{

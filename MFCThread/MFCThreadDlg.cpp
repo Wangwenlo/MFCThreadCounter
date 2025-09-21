@@ -66,7 +66,7 @@ CMFCThreadDlg::~CMFCThreadDlg()
 	if (m_wThreadWorker && m_wThreadWorker->IsRunning())
 	{
 		m_wThreadWorker->StopThread();
-		SetWindowText(L"线程已停止");
+		//SetWindowText(L"线程已停止");
 	}
 	if (m_wThreadWorker)
 	{
